@@ -27,6 +27,11 @@
 			font-size: 21px
 		&__link
 			display: none
+	.catalog
+		&__content
+			justify-content: space-around
+		&__tab
+			width: 166px
 
 @media ( max-width: 767px  )   
 	.promo
@@ -47,10 +52,14 @@
 		min-height: 616px
 	.carousel
 		&__inner
-			width: 640px
+			width: 560px
+			img
+				width: 100%
 	.catalog
 		&__content
 			justify-content: space-around
+		&-item
+			margin: 20px
 
 
 
@@ -95,3 +104,26 @@
 			display: none
 	.feed-form
 		width: 250px
+	.catalog
+		&__tabs
+			flex-wrap: wrap
+		&__tab
+			margin-bottom: 10px
+	.reviews
+		&__review
+			flex-direction: column
+			align-items: center
+		&__descr
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			width: 300px
+			text-align: center
+			margin-left: 0px
+			margin-top: 20px
+	.carousel
+		&__inner
+			width: 302px
+			img
+				width: 100%
