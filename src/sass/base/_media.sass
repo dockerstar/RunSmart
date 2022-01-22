@@ -69,14 +69,73 @@
 		&__address
 			display: none
 
-
+@media (min-width: 576px) and (max-width: 1920px)
+	.header
+		&__menu
+			display: none
+		&__hamburger
+			display: none
 
 @media ( max-width: 575px  )
 	.header
+		justify-content: space-between
 		&__logo
 			width: 173px
+			img
+				margin-left: 10px
 		&__phone
 			font-size: 11px
+		&__contacts
+			display: none
+		&__hamburger
+			top: 50%
+			transform: translateY(-50%)
+			margin-right: 15px
+			width: 26px
+			height: 12px
+			cursor: pointer
+			span
+				display: block
+				height: 2px
+				background-color: #fff
+				margin-bottom: 3px
+				transition: 0.5s all
+			&_active
+				span
+					margin-bottom: -2px
+					&:nth-child(1)
+						transform: translateY(6px) rotate(-45deg)
+					&:nth-child(2)
+						display: none
+					&:nth-child(3)
+						transform: translateY(6px)  rotate(45deg)
+		&__menu
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			position: fixed
+			width: 70%
+			height: 100vh
+			top: 0
+			left: -100%
+			list-style-type: none
+			background-color: rgba(0, 0, 0, 0.8) 
+			transition: 0.5s all
+			&_active
+				left: 0
+			&-item
+				margin-bottom: 18px
+				font-family: MuseoModerno
+				font-style: normal
+				font-weight: 500
+				font-size: 18px
+				text-transform: uppercase
+			&-link
+				color: #fff
+				text-decoration: none
+				&:hover
+					color: #fff
 	.button
 		width: 99px
 		height: 32px
