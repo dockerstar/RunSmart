@@ -88,7 +88,9 @@
 		&__contacts
 			display: none
 		&__hamburger
-			top: 50%
+			position: fixed
+			top: 6%
+			right: 15px
 			transform: translateY(-50%)
 			margin-right: 15px
 			width: 26px
@@ -97,7 +99,7 @@
 			span
 				display: block
 				height: 2px
-				background-color: #fff
+				background-color: $main_color
 				margin-bottom: 3px
 				transition: 0.5s all
 			&_active
@@ -110,6 +112,7 @@
 					&:nth-child(3)
 						transform: translateY(6px)  rotate(45deg)
 		&__menu
+			z-index: 2
 			display: flex
 			flex-direction: column
 			justify-content: center
