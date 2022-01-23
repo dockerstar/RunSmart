@@ -35,11 +35,11 @@ $(document).ready(function(){
 
       //modal
 
-      $('[data-modal=consultation]').on('click', function() {
-        $('.overlay, #consultation').fadeIn();
+      $('[data-modal=consultat]').on('click', function() {
+        $('.overlay, #consultat').fadeIn();
       });
       $('.modal__close').on('click', function() {
-        $('.overlay, #consultation, #order, #thanks').fadeOut();
+        $('.overlay, #consultat, #order, #thanks').fadeOut();
       });
       $('.button_mini').on('click', function() {
         $('.overlay, #order').fadeIn();
@@ -65,7 +65,35 @@ $(document).ready(function(){
             item.addEventListener('click', () => {
                 hamburger.classList.toggle('header__hamburger_active');
                 menu.classList.toggle('header__menu_active');
-            })
-        })
-    })
+            });
+        });
+    });
+
+    function validateForms(form){
+      $(form).validate({
+        rules: {
+          name: "required",
+          phone: "required",
+          email: {
+            required: true,
+            email: true
+          }
+        },
+        messages: {
+          name: "Пожалуйста введите свое имя",
+          phone: "Пожалуйста введите свой номер телефона",
+          email: {
+            required: "Пожалуйста введите свою почту",
+            email: "Неправильно введен адрес почты"
+          }
+        }
+      }
+      );
+    }
+    
+    validateForms('#order form');
+    validateForms('#consultat form');
+    validateForms('#main form');
+
+    $('input[name=phone]').mask("+7 (999) 999-99-99");
 });
