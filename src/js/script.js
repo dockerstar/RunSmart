@@ -36,12 +36,15 @@ $(document).ready(function(){
 
       $('[data-modal=consultat]').on('click', function() {
         $('.overlay, #consultat').fadeIn();
+        $('.header, #hamburger').fadeOut();
       });
       $('.modal__close').on('click', function() {
         $('.overlay, #consultat, #order, #thanks').fadeOut();
+        $('.header, #hamburger').fadeIn();
       });
       $('.button_mini').on('click', function() {
         $('.overlay, #order').fadeIn();
+        $('.header, #hamburger').fadeOut();
       });
       $('.button_mini').each(function(i) {
         $(this).on('click', function() {
