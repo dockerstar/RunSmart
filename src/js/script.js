@@ -33,7 +33,6 @@ $(document).ready(function(){
       toggleSlide('.catalog-item__link');
       toggleSlide('.catalog-item__back');
 
-      //modal
 
       $('[data-modal=consultat]').on('click', function() {
         $('.overlay, #consultat').fadeIn();

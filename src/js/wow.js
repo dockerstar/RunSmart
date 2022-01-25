@@ -69,11 +69,11 @@
 
     var customEvent = void 0;
     if (document.createEvent != null) {
-      // W3C DOM
+
       customEvent = document.createEvent('CustomEvent');
       customEvent.initCustomEvent(event, bubble, cancel, detail);
     } else if (document.createEventObject != null) {
-      // IE DOM < 9
+    
       customEvent = document.createEventObject();
       customEvent.eventType = event;
     } else {
@@ -85,7 +85,7 @@
 
   function emitEvent(elem, event) {
     if (elem.dispatchEvent != null) {
-      // W3C DOM
+      
       elem.dispatchEvent(event);
     } else if (event in (elem != null)) {
       elem[event]();
@@ -96,26 +96,26 @@
 
   function addEvent(elem, event, fn) {
     if (elem.addEventListener != null) {
-      // W3C DOM
+      
       elem.addEventListener(event, fn, false);
     } else if (elem.attachEvent != null) {
-      // IE DOM
+      
       elem.attachEvent('on' + event, fn);
     } else {
-      // fallback
+      
       elem[event] = fn;
     }
   }
 
   function removeEvent(elem, event, fn) {
     if (elem.removeEventListener != null) {
-      // W3C DOM
+      
       elem.removeEventListener(event, fn, false);
     } else if (elem.detachEvent != null) {
-      // IE DOM
+      
       elem.detachEvent('on' + event, fn);
     } else {
-      // fallback
+      
       delete elem[event];
     }
   }
@@ -128,7 +128,7 @@
     return document.documentElement.clientHeight;
   }
 
-  // Minimalistic WeakMap shim, just in case.
+  
   var WeakMap = window.WeakMap || window.MozWeakMap || function () {
     function WeakMap() {
       _classCallCheck(this, WeakMap);
@@ -167,7 +167,7 @@
     return WeakMap;
   }();
 
-  // Dummy MutationObserver, to avoid raising exceptions.
+  
   var MutationObserver = window.MutationObserver || window.WebkitMutationObserver || window.MozMutationObserver || (_temp = _class = function () {
     function MutationObserver() {
       _classCallCheck(this, MutationObserver);
