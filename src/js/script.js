@@ -36,15 +36,15 @@ $(document).ready(function(){
 
       $('[data-modal=consultat]').on('click', function() {
         $('.overlay, #consultat').fadeIn();
-        $('.header, #hamburger').fadeOut();
+        $('.hamburger-menu, #hamburger').fadeOut();
       });
       $('.modal__close').on('click', function() {
         $('.overlay, #consultat, #order, #thanks').fadeOut();
-        $('.header, #hamburger').fadeIn();
+        $('.hamburger-menu, #hamburger').fadeIn();
       });
       $('.button_mini').on('click', function() {
         $('.overlay, #order').fadeIn();
-        $('.header, #hamburger').fadeOut();
+        $('.hamburger-menu, #hamburger').fadeOut();
       });
       $('.button_mini').each(function(i) {
         $(this).on('click', function() {
@@ -56,16 +56,16 @@ $(document).ready(function(){
       window.addEventListener('DOMContentLoaded', () => {
         const menu = document.querySelector('.header__menu'),
         menuItem = document.querySelectorAll('.header__menu-item'),
-        hamburger = document.querySelector('.header__hamburger');
+        hamburger = document.querySelector('.hamburger-menu');
     
         hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('header__hamburger_active');
+            hamburger.classList.toggle('hamburger-menu_active');
             menu.classList.toggle('header__menu_active');
         });
     
         menuItem.forEach(item => {
             item.addEventListener('click', () => {
-                hamburger.classList.toggle('header__hamburger_active');
+                hamburger.classList.toggle('hamburger-menu_active');
                 menu.classList.toggle('header__menu_active');
             });
         });

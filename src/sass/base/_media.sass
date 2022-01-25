@@ -87,31 +87,7 @@
 			font-size: 11px
 		&__contacts
 			display: none
-		&__hamburger
-			z-index: 99
-			position: fixed
-			top: 6%
-			right: 15px
-			transform: translateY(-50%)
-			margin-right: 15px
-			width: 26px
-			height: 12px
-			cursor: pointer
-			span
-				display: block
-				height: 2px
-				background-color: $main_color
-				margin-bottom: 3px
-				transition: 0.5s all
-			&_active
-				span
-					margin-bottom: -2px
-					&:nth-child(1)
-						transform: translateY(6px) rotate(-45deg)
-					&:nth-child(2)
-						display: none
-					&:nth-child(3)
-						transform: translateY(6px)  rotate(45deg)
+	
 		&__menu
 			z-index: 2
 			display: flex
@@ -219,3 +195,28 @@
 			&-item
 				width: 40px
 				height: 40px
+	.hamburger-menu
+		z-index: 99
+		position: fixed
+		top: 6%
+		right: 15px
+		transform: translateY(-50%)
+		margin-right: 15px
+		width: 26px
+		height: 12px
+		cursor: pointer
+		span
+			display: block
+			height: 2px
+			background-color: $main_color
+			margin-bottom: 3px
+			transition: 0.5s all
+		&_active
+			span
+				margin-bottom: -2px
+				&:nth-child(1)
+					transform: translateY(6px) rotate(-45deg)
+				&:nth-child(2)
+					display: none
+				&:nth-child(3)
+					transform: translateY(6px)  rotate(45deg)
